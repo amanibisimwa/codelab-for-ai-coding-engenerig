@@ -52,7 +52,7 @@ export const CODELAB_PAGES: CodelabPage[] = [
     navLabel: '5. Chaîne de prompts',
     eyebrow: 'Section 5 sur 5',
     icon: 'account_tree',
-    description: "Construction pas à pas de PesaFlow à l'aide d'une suite de 8 prompts séquentiels vérifiés.",
+    description: "Construction pas à pas de PesaFlow à l'aide d'une suite de 9 prompts séquentiels vérifiés.",
     stepNumber: 6,
   },
   {

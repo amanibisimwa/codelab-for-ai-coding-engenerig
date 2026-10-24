@@ -432,6 +432,39 @@ Verify all calculations against known examples, confirm that filters update the 
 
 Finally, run the project's available checks and resolve errors introduced by this step. Do not refactor unrelated features.`;
 
+export const PROMPT_9_SNIPPET = `# Step 9: Final Code Review, Design System Compliance, and Refactoring
+
+Analyze the entire PesaFlow codebase and instructions in \`AGENTS.md\`. Conduct a comprehensive audit and refactor all implemented features against the following quality, architecture, and styling rules:
+
+## 1. CSS & Material Design System Compliance
+
+- **Layout & Alignment Only:** Remove all custom CSS rules that override component shapes, elevations, borders, or colors. Limit component SCSS strictly to layout, structural alignment (Flexbox/Grid), sizing, and responsive media queries.
+- **Material 3 Theming:** Strictly eliminate any custom/ad-hoc colors (hex codes, rgb/hsl literals). Exclusively rely on Angular Material's official design tokens (\`var(--mat-sys-...)\`) as documented in [Angular Material Color System](https://material.angular.dev/guide/theming-your-components#colors).
+- **Outlined MatCard:** Ensure all cards across the application use \`<mat-card appearance="outlined">\` with no custom border-color overrides, drop-shadows, or custom elevations.
+- **Icons & Material CDK:** Use standard Material Design icons (\`MatIcon\`) and official CDK components without bespoke skinning.
+
+## 2. Dynamic Firestore Data Integration
+
+- **Zero Hard-Coded/Mock Data:** Audit all components, services, and state stores. Remove mock transactions, hard-coded budget categories, dummy balances, and temporary placeholders.
+- **Real-Time Firestore Streams:** Ensure all displayed financial data (transactions, budgets, user preferences, summaries) is dynamically retrieved and synchronized through Firestore services.
+- **User Isolation:** Verify that every Firestore read and write operation is properly scoped to the authenticated user's ID (\`userId\`).
+- **Loading & Empty States:** Ensure all components gracefully display Angular Material progress indicators during data fetching and informative empty states when no Firestore documents exist.
+
+## 3. Modularity and File Size Limit (Max 250 Lines)
+
+- **File Length Audit:** Scan all TypeScript files (\`.ts\`), templates (\`.html\`), and stylesheets (\`.scss\`) across the project.
+- **Refactoring Threshold:** Identify any file exceeding 250 lines of code.
+- **Decomposition Strategy:**
+  - Split large presentation components into smaller, reusable standalone child components.
+  - Extract complex calculations, data transformations, and state logic into dedicated helper classes or services under \`src/app/cores/services/\`.
+  - Move shared interfaces and constants to their respective model and data files.
+
+## Completion
+
+- Run the Angular CLI build (\`ng build\`) and verify that compilation succeeds without errors or warnings.
+- Run tests and linting to verify that no regressions were introduced.
+- Provide a summary of the cleaned styles, dynamic Firestore connections, and refactored files.`;
+
 export const PROMPTS_CHAIN_ITEMS: PromptItem[] = [
   {
     id: 'prompt-1',
@@ -488,5 +521,12 @@ export const PROMPTS_CHAIN_ITEMS: PromptItem[] = [
     title: 'Analyses du Dashboard',
     description: 'Le Dashboard alimenté par les données réelles du Budget et du Cashflow. Ce prompt utilise la bibliothèque ngx-echarts pour les graphiques interactifs.',
     snippet: PROMPT_8_SNIPPET,
+  },
+  {
+    id: 'prompt-9',
+    number: 9,
+    title: 'Revue de conformité et refactoring',
+    description: 'Audit et refactoring : styles limités au layout, couleurs Material 3 strictes, cartes outlined, données 100% Firestore, et modularisation des fichiers dépassant 250 lignes.',
+    snippet: PROMPT_9_SNIPPET,
   },
 ];
