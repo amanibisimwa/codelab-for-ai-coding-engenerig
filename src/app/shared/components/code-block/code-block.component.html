@@ -1,0 +1,21 @@
+<div class="code-block-container">
+  <div class="code-block-header">
+    <div class="header-left">
+      @if (title()) {
+        <span class="code-title">{{ title() }}</span>
+      }
+      <span class="code-badge">{{ language() }}</span>
+    </div>
+    <button
+      mat-icon-button
+      type="button"
+      class="copy-btn"
+      (click)="copy()"
+      [matTooltip]="copied ? 'Copié !' : 'Copier le code'"
+      aria-label="Copier le code dans le presse-papiers"
+    >
+      <mat-icon>{{ copied ? 'check' : 'content_copy' }}</mat-icon>
+    </button>
+  </div>
+  <pre class="code-pre"><code class="code-content">{{ code() }}</code></pre>
+</div>

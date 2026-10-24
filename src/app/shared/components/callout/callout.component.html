@@ -1,0 +1,15 @@
+<mat-card appearance="outlined" class="callout-card" [class]="'callout-' + variant()">
+  <mat-card-content class="callout-body">
+    <div class="callout-icon-col">
+      <mat-icon class="callout-icon">{{ iconName() }}</mat-icon>
+    </div>
+    <div class="callout-content-col">
+      @if (title()) {
+        <div class="callout-title">{{ title() }}</div>
+      }
+      <div class="callout-text">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

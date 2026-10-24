@@ -1,0 +1,35 @@
+<nav class="page-nav-wrapper" aria-label="Navigation entre les sections du codelab">
+  <div class="nav-prev">
+    @if (nav.previousPage(); as prev) {
+      <a
+        mat-stroked-button
+        [routerLink]="['/', prev.path]"
+        class="nav-btn"
+        aria-label="Aller à la section précédente"
+      >
+        <mat-icon>arrow_back</mat-icon>
+        <div class="nav-btn-text">
+          <span class="nav-btn-sub">Précédent</span>
+          <span class="nav-btn-title">{{ prev.navLabel }}</span>
+        </div>
+      </a>
+    }
+  </div>
+
+  <div class="nav-next">
+    @if (nav.nextPage(); as next) {
+      <a
+        mat-flat-button
+        [routerLink]="['/', next.path]"
+        class="nav-btn nav-btn-primary"
+        aria-label="Aller à la section suivante"
+      >
+        <div class="nav-btn-text text-right">
+          <span class="nav-btn-sub">Suivant</span>
+          <span class="nav-btn-title">{{ next.navLabel }}</span>
+        </div>
+        <mat-icon>arrow_forward</mat-icon>
+      </a>
+    }
+  </div>
+</nav>

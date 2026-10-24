@@ -1,0 +1,96 @@
+.callout-card {
+  margin: 18px 0;
+  border-left-width: 4px !important;
+}
+
+.callout-body {
+  display: flex;
+  gap: 14px;
+  padding: 14px 16px !important;
+  align-items: flex-start;
+}
+
+.callout-icon-col {
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.callout-icon {
+  font-size: 22px;
+  width: 22px;
+  height: 22px;
+}
+
+.callout-content-col {
+  flex: 1;
+  min-width: 0;
+}
+
+.callout-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.callout-text {
+  font-size: 0.93rem;
+  line-height: 1.5;
+
+  p {
+    margin: 0 0 8px 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* Material Design System Accent Tokens */
+.callout-info {
+  border-left-color: var(--mat-sys-secondary) !important;
+  .callout-icon {
+    color: var(--mat-sys-secondary);
+  }
+  .callout-title {
+    color: var(--mat-sys-secondary);
+  }
+}
+
+.callout-tip {
+  border-left-color: var(--mat-sys-primary) !important;
+  .callout-icon {
+    color: var(--mat-sys-primary);
+  }
+  .callout-title {
+    color: var(--mat-sys-primary);
+  }
+}
+
+.callout-quote {
+  border-left-color: var(--mat-sys-tertiary) !important;
+  .callout-icon {
+    color: var(--mat-sys-tertiary);
+  }
+  .callout-title {
+    color: var(--mat-sys-tertiary);
+  }
+}
+
+.callout-convention {
+  border-left-color: var(--mat-sys-secondary) !important;
+  .callout-icon {
+    color: var(--mat-sys-secondary);
+  }
+  .callout-title {
+    color: var(--mat-sys-secondary);
+  }
+}
+
+.callout-warning {
+  border-left-color: var(--mat-sys-error) !important;
+  .callout-icon {
+    color: var(--mat-sys-error);
+  }
+  .callout-title {
+    color: var(--mat-sys-error);
+  }
+}

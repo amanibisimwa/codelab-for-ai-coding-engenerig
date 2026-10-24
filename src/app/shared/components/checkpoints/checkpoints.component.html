@@ -1,0 +1,16 @@
+<mat-card appearance="outlined" class="checkpoints-card">
+  <mat-card-header class="checkpoints-header">
+    <mat-icon class="checkpoints-header-icon">checklist</mat-icon>
+    <mat-card-title class="checkpoints-title">{{ title() }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="checkpoints-content">
+    <mat-list role="list" class="checkpoints-list">
+      @for (item of items(); track item) {
+        <mat-list-item role="listitem" class="checkpoint-item">
+          <mat-icon matListItemIcon class="check-icon">check_circle</mat-icon>
+          <span class="checkpoint-text">{{ item }}</span>
+        </mat-list-item>
+      }
+    </mat-list>
+  </mat-card-content>
+</mat-card>

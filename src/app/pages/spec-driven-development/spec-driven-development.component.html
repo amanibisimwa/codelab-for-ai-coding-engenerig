@@ -1,0 +1,80 @@
+<div class="page-container">
+  <app-page-header
+    eyebrow="Section 2 sur 5"
+    title="2. Spec-Driven Development"
+    lead="Exigences, contrats, documents de référence. Avant de demander du code, définissons ce que le logiciel doit réellement faire. La première chose à faire avant de mettre en place l’application est de tout spécifier."
+  ></app-page-header>
+
+  <section class="prose-section">
+    <app-callout variant="warning" title="Le piège">
+      <p>
+        Aujourd’hui, même pour être spécifique, il faut déjà savoir ce que l’on attend de l’IA. Si vous ne savez pas comment être spécifique, utilisez l’IA pour aider l’IA. Voici comment faire.
+      </p>
+    </app-callout>
+
+    <h2>2.1 Choisir le tech stack avec un chatbot</h2>
+    <ol class="step-ol">
+      <li>Donnez le projet (titre, contexte et objectif de la section 1) à un chatbot comme <strong>Gemini</strong>, <strong>ChatGPT</strong> ou <strong>Claude</strong>.</li>
+      <li>Posez-lui cette question :</li>
+    </ol>
+
+    <app-code-block
+      [code]="chatbotQuestion"
+      language="prompt"
+      title="Question au chatbot"
+    ></app-code-block>
+
+    <p>Vous obtiendrez une réponse du type « Stack idéale pour le prototype (MVP) » :</p>
+
+    <app-data-table
+      [columns]="stackColumns"
+      [rows]="mvpStackRows"
+      caption="Stack idéale suggérée pour le prototype (MVP)"
+    ></app-data-table>
+
+    <h2>2.2 Imposer son propre tech stack</h2>
+    <p>
+      Si vous maîtrisez déjà l’ingénierie logicielle, vous pouvez décider par vous-même. C’est le cas ici : nous utilisons le tech stack de <strong>DrcMind SARL</strong> pour mettre au point l’application.
+    </p>
+
+    <app-data-table
+      [columns]="stackColumns"
+      [rows]="drcmindStackRows"
+      caption="Tech stack DrcMind SARL retenu pour PesaFlow"
+    ></app-data-table>
+
+    <h2>2.3 Définir « qui fait quoi »</h2>
+    <p>
+      Après le tech stack, détaillez <strong>qui fait quoi dans l’application</strong> : pour qui est-elle, qui sont les utilisateurs et que font-ils avec l’application (les fonctionnalités). Vous pouvez refaire le même exercice avec l’IA : donnez-lui le guide du projet et vos exigences pour qu’elle vous aide à définir des spécifications précises.
+    </p>
+    <p>
+      Écrivez le résultat dans un fichier <strong>Markdown</strong> (<code>.md</code>). C’est un bon format pour prompter une IA, car il donne une hiérarchie à votre prompt : titres, sous-titres, contenu, points structurés, etc.
+    </p>
+
+    <h2>2.4 La spécification de PesaFlow</h2>
+    <p>
+      Voici le prompt général de l’application en Markdown (vous pouvez l’enregistrer dans un fichier, par exemple <code>SPEC.md</code>). Il se découpe en six étapes : vision, landing page, authentification, onboarding, dashboard, budget et cashflow.
+    </p>
+
+    <mat-accordion class="spec-accordion">
+      <mat-expansion-panel class="spec-panel">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="panel-title">
+            <mat-icon class="panel-icon">description</mat-icon>
+            <span>Afficher la spécification complète (SPEC.md · 260 lignes)</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <app-code-block
+          [code]="specSnippet"
+          language="markdown"
+          title="SPEC.md"
+        ></app-code-block>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <app-checkpoints [items]="checkpoints"></app-checkpoints>
+  </section>
+
+  <app-page-nav></app-page-nav>
+</div>

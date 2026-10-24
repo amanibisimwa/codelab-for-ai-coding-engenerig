@@ -1,0 +1,83 @@
+.code-block-container {
+  margin: 16px 0;
+  background-color: var(--mat-sys-surface-container);
+  color: var(--mat-sys-on-surface);
+  overflow: hidden;
+  border: 1px solid var(--mat-sys-outline-variant);
+  border-radius: 8px;
+}
+
+.code-block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px;
+  background-color: var(--mat-sys-surface-container-high);
+  border-bottom: 1px solid var(--mat-sys-outline-variant);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.code-title {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.code-badge {
+  font-size: 0.72rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: var(--mat-sys-surface-container-highest);
+  color: var(--mat-sys-on-surface);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.copy-btn {
+  color: var(--mat-sys-on-surface-variant);
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+
+  &:hover {
+    color: var(--mat-sys-on-surface);
+    background-color: var(--mat-sys-surface-container-highest);
+  }
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.code-pre {
+  margin: 0;
+  padding: 14px 16px;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  tab-size: 2;
+  white-space: pre;
+
+  /* Scrollbar */
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--mat-sys-outline-variant);
+    border-radius: 3px;
+  }
+}
+
+.code-content {
+  font-family: inherit;
+  color: inherit;
+}

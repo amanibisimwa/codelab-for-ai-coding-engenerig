@@ -1,0 +1,92 @@
+.prose-section {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--mat-sys-on-surface);
+
+  p {
+    margin-bottom: 16px;
+  }
+
+  .lead-text {
+    font-size: 1.08rem;
+    font-weight: 400;
+    color: var(--mat-sys-on-surface);
+  }
+
+  h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 32px 0 14px;
+    color: var(--mat-sys-on-surface);
+    letter-spacing: -0.01em;
+  }
+}
+
+.feature-list {
+  margin: 0 0 24px 0;
+  padding-left: 20px;
+
+  li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+
+  code {
+    background-color: var(--mat-sys-surface-container-highest);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.88em;
+  }
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 20px 0 32px;
+}
+
+.plan-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+}
+
+.plan-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.plan-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 16px 8px;
+}
+
+.card-icon {
+  color: var(--mat-sys-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  width: 28px;
+  height: 28px;
+}
+
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.card-desc {
+  padding: 0 16px 16px !important;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--mat-sys-on-surface-variant);
+  flex: 1;
+}

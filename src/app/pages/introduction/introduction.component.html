@@ -1,0 +1,66 @@
+<div class="page-container">
+  <app-page-header
+    eyebrow="Introduction"
+    title="Aperçu du Codelab"
+    lead="Les méthodes des développeurs experts · Tech Talk · Amani Bisimwa, GDE Firebase et CEO DrcMind"
+  ></app-page-header>
+
+  <section class="prose-section">
+    <p class="lead-text">
+      Avec des outils comme Claude Code, Google Antigravity et GitHub Copilot dans VS Code, développer une application n’a jamais été aussi accessible. Pourtant, si les agents IA génèrent du code rapidement, de nombreux projets commencent avec enthousiasme, puis s’enlisent : exigences mal définies, fonctionnalités qui s’accumulent, erreurs difficiles à corriger, applications complexes à maintenir, voire jamais terminées.
+    </p>
+
+    <p>
+      Ce codelab déroule, pas à pas, l’approche présentée dans cette Tech Talk et les pratiques appliquées chez DrcMind SARL pour développer plus efficacement, de l’idée initiale à la mise en production. Le fil rouge est <strong>PesaFlow</strong>, une application de gestion de dépenses individuelle mensuelle.
+    </p>
+
+    <p>
+      L’objectif est de dépasser le simple prompting et d’adopter une véritable approche d’ingénierie du développement assisté par l’IA : moins de code généré à l’aveugle, moins de corrections inutiles et davantage d’applications fiables, maintenables et livrées jusqu’au bout.
+    </p>
+
+    <h2>Ce que vous allez apprendre</h2>
+    <ul class="feature-list">
+      <li>Bien définir ses besoins grâce à une spécification écrite (<strong>Spec-Driven Development</strong>).</li>
+      <li>Structurer les tâches et décomposer le travail en une <strong>chaîne de prompts</strong>.</li>
+      <li>Guider les agents avec le <strong>Context Engineering</strong> (README, <code>AGENTS.md</code>, skills).</li>
+      <li>Préserver une architecture cohérente tout au long du développement.</li>
+      <li>Intégrer des vérifications (compilation, tests, contrôles) à la fin de chaque étape pour maîtriser la complexité sans sacrifier la qualité du code.</li>
+    </ul>
+
+    <h2>Ce dont vous avez besoin</h2>
+    <ul class="feature-list">
+      <li>Un chatbot IA : <strong>Gemini</strong>, <strong>ChatGPT</strong> ou <strong>Claude</strong>.</li>
+      <li>Un IDE avec agent IA : <strong>Antigravity IDE</strong> (utilisé dans ce codelab), <strong>VS Code</strong> ou <strong>Claude Code</strong>.</li>
+      <li><strong>Node.js</strong> et <strong>npm</strong> (pour <code>npx</code> et l’Angular CLI).</li>
+      <li>Un compte <strong>Firebase</strong>.</li>
+      <li>Des notions de développement web.</li>
+    </ul>
+
+    <h2>Plan du codelab</h2>
+    <p>Le codelab est structuré en 5 étapes progressives et une conclusion :</p>
+
+    <div class="cards-grid">
+      @for (page of planPages; track page.path) {
+        <a [routerLink]="['/', page.path]" class="plan-card-link">
+          <mat-card appearance="outlined" class="plan-card">
+            <mat-card-header class="plan-card-header">
+              <mat-icon mat-card-avatar class="card-icon">{{ page.icon }}</mat-icon>
+              <mat-card-title class="card-title">{{ page.title }}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="card-desc">
+              <p>{{ page.description }}</p>
+            </mat-card-content>
+          </mat-card>
+        </a>
+      }
+    </div>
+
+    <app-callout variant="convention" title="Convention">
+      <p>
+        Les explications sont en français ; les commandes, le code et les prompts rédigés en anglais restent en anglais. La spécification de PesaFlow (section 2.4) est écrite en français.
+      </p>
+    </app-callout>
+  </section>
+
+  <app-page-nav></app-page-nav>
+</div>

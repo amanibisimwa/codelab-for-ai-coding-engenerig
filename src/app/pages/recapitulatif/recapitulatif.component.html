@@ -1,0 +1,103 @@
+<div class="page-container">
+  <app-page-header
+    eyebrow="Conclusion"
+    title="Conclusion"
+    lead="Félicitations ! Vous avez parcouru la démarche complète, de l’idée à une application structurée."
+  ></app-page-header>
+
+  <section class="prose-section">
+    <p class="celebration-intro">
+      Vous maîtrisez désormais les 4 étapes fondamentales pour transformer une simple idée en une application robuste et maintenable assistée par l'intelligence artificielle :
+    </p>
+
+    <div class="pillars-grid">
+      <a routerLink="/spec-driven-development" class="pillar-card-link">
+        <mat-card appearance="outlined" class="pillar-card">
+          <mat-card-content class="pillar-content">
+            <div class="pillar-header">
+              <span class="pillar-num">1</span>
+              <strong class="pillar-title">Spécifier</strong>
+            </div>
+            <p>
+              Tech stack, utilisateurs, fonctionnalités et règles métier sont écrits en Markdown avant toute ligne de code.
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </a>
+
+      <a routerLink="/preparer-environnement" class="pillar-card-link">
+        <mat-card appearance="outlined" class="pillar-card">
+          <mat-card-content class="pillar-content">
+            <div class="pillar-header">
+              <span class="pillar-num">2</span>
+              <strong class="pillar-title">Préparer l’environnement</strong>
+            </div>
+            <p>
+              Projet Angular SSR, skills Angular, Firebase et web moderne installés au niveau du projet en un prompt.
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </a>
+
+      <a routerLink="/context-engineering" class="pillar-card-link">
+        <mat-card appearance="outlined" class="pillar-card">
+          <mat-card-content class="pillar-content">
+            <div class="pillar-header">
+              <span class="pillar-num">3</span>
+              <strong class="pillar-title">Fournir le bon contexte</strong>
+            </div>
+            <p>
+              README, architecture MVC et <code>AGENTS.md</code> pour que chaque agent suive les mêmes règles.
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </a>
+
+      <a routerLink="/chaine-de-prompts" class="pillar-card-link">
+        <mat-card appearance="outlined" class="pillar-card">
+          <mat-card-content class="pillar-content">
+            <div class="pillar-header">
+              <span class="pillar-num">4</span>
+              <strong class="pillar-title">Décomposer le travail</strong>
+            </div>
+            <p>
+              Huit prompts enchaînés, chacun avec sa section « Completion » pour vérifier avant d’avancer.
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </a>
+    </div>
+
+    <h2>Ce que vous obtenez</h2>
+    <div class="result-box">
+      <p>
+        Un <strong>prototype PesaFlow cohérent et fonctionnel</strong> couvrant tout le parcours : découverte de l’application, authentification, configuration initiale, consultation du Dashboard, planification budgétaire et enregistrement des transactions.
+      </p>
+    </div>
+
+    <h2>Bonnes pratiques à retenir</h2>
+    <ul class="best-practices-list">
+      @for (practice of bestPractices; track practice) {
+        <li>
+          <mat-icon class="practice-icon">verified</mat-icon>
+          <span>{{ practice }}</span>
+        </li>
+      }
+    </ul>
+
+    <app-callout variant="tip">
+      <p class="final-quote">
+        <strong>Résultat :</strong> moins de code généré à l’aveugle, moins de corrections inutiles et davantage d’applications fiables, maintenables et livrées jusqu’au bout.
+      </p>
+    </app-callout>
+
+    <div class="action-cta">
+      <a mat-flat-button color="primary" routerLink="/introduction" class="cta-btn">
+        <mat-icon>replay</mat-icon>
+        <span>Revenir au début du codelab</span>
+      </a>
+    </div>
+  </section>
+
+  <app-page-nav></app-page-nav>
+</div>

@@ -1,0 +1,28 @@
+<div class="page-container">
+  <app-page-header
+    eyebrow="Section 3 sur 5"
+    title="3. Préparer l’environnement"
+    lead="Nous développons avec Angular et Firebase dans Antigravity IDE, mais vous pouvez utiliser l’IDE de votre choix : VS Code ou Claude Code."
+  ></app-page-header>
+
+  <section class="prose-section">
+    <h2>3.1 Créer l’application en un seul prompt</h2>
+    <p>
+      Un seul prompt demande à l’agent de créer le projet, d’installer les skills au niveau du projet, puis d’ajouter AngularFire et Angular Material avec <code>ng add</code>. Collez-le tel quel dans l’agent :
+    </p>
+
+    <app-code-block
+      [code]="setupPrompt"
+      language="prompt"
+      title="Prompt one-shot de création de projet"
+    ></app-code-block>
+
+    <p>
+      Les skills donnent à l’agent des consignes spécialisées par technologie (Angular, Firebase, web moderne). L’option <code>--agent=antigravity</code> correspond à l’IDE utilisé ici ; adaptez-la si vous travaillez avec un autre agent.
+    </p>
+
+    <app-checkpoints [items]="checkpoints"></app-checkpoints>
+  </section>
+
+  <app-page-nav></app-page-nav>
+</div>

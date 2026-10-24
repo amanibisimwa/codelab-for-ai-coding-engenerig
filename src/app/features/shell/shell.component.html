@@ -1,0 +1,93 @@
+<a href="#contenu" class="skip-link">Aller au contenu principal</a>
+
+<div class="shell-layout">
+  <!-- Top Application Toolbar -->
+  <mat-toolbar class="app-toolbar">
+    @if (isMobile()) {
+      <button
+        mat-icon-button
+        type="button"
+        (click)="nav.toggleMobileNav()"
+        aria-label="Ouvrir le menu de navigation"
+      >
+        <mat-icon>{{ nav.isMobileNavOpen() ? 'close' : 'menu' }}</mat-icon>
+      </button>
+    }
+
+    <div class="toolbar-brand">
+      <span class="brand-title">AI Coding Lab</span>
+      <span class="brand-subtitle">L'ingénierie logicielle au-delà du Vibe Coding</span>
+    </div>
+
+    <span class="toolbar-spacer"></span>
+
+    <div class="step-indicator" aria-label="Progression du codelab">
+      <span class="step-badge">
+        {{ nav.currentIndex() + 1 }} / {{ nav.pages().length }}
+      </span>
+    </div>
+  </mat-toolbar>
+
+  <!-- Progress Bar (Determinate) -->
+  <mat-progress-bar
+    mode="determinate"
+    [value]="nav.progressPercent()"
+    class="codelab-progress"
+    aria-label="Pourcentage de lecture du codelab"
+  ></mat-progress-bar>
+
+  <!-- Sidenav Container -->
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav
+      [mode]="sidenavMode()"
+      [opened]="!isMobile() || nav.isMobileNavOpen()"
+      (closed)="nav.closeMobileNav()"
+      class="app-sidenav"
+      [attr.role]="isMobile() ? 'dialog' : 'navigation'"
+      aria-label="Menu des sections du codelab"
+    >
+      <div class="sidenav-header">
+        <span class="sidenav-heading">Plan du codelab</span>
+        <span class="sidenav-progress-text">{{ nav.progressPercent() }}% complété</span>
+      </div>
+
+      <mat-nav-list class="sidenav-nav-list">
+        @for (page of nav.pages(); track page.path) {
+          <a
+            mat-list-item
+            [routerLink]="['/', page.path]"
+            routerLinkActive="active-nav-item"
+            (click)="onNavClick()"
+            class="sidenav-item"
+          >
+            <mat-icon matListItemIcon class="nav-icon">{{ page.icon }}</mat-icon>
+            <span matListItemTitle class="nav-title">{{ page.navLabel }}</span>
+          </a>
+        }
+      </mat-nav-list>
+
+      <div class="sidenav-footer">
+        <small class="author-tag">Tech Talk by Amani Bisimwa</small>
+      </div>
+    </mat-sidenav>
+
+    <!-- Main Content Area -->
+    <mat-sidenav-content class="sidenav-main-content">
+      <main id="contenu" class="main-outlet-container" tabindex="-1">
+        <router-outlet></router-outlet>
+      </main>
+
+      <!-- Global Footer -->
+      <footer class="app-footer">
+        <div class="footer-content">
+          <p class="footer-line">
+            <strong>AI Coding Lab</strong> — L'ingénierie logicielle au-delà du Vibe Coding.
+          </p>
+          <p class="footer-sub">
+            Les méthodes des développeurs experts · Tech Talk · Amani Bisimwa, GDE Firebase et CEO DrcMind.
+          </p>
+        </div>
+      </footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

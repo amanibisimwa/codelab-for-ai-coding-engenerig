@@ -1,0 +1,35 @@
+.prose-section {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--mat-sys-on-surface);
+
+  p {
+    margin-bottom: 16px;
+  }
+}
+
+.quote-item {
+  margin-bottom: 12px;
+  line-height: 1.6;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  strong {
+    color: var(--mat-sys-primary);
+  }
+}
+
+.emphasis-box {
+  margin-top: 24px;
+  padding: 16px 20px;
+  background-color: var(--mat-sys-surface-container);
+  border-radius: 8px;
+  border-left: 4px solid var(--mat-sys-primary);
+
+  p {
+    margin: 0;
+    font-size: 1.02rem;
+  }
+}

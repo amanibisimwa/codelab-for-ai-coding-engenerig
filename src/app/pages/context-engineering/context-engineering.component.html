@@ -1,0 +1,88 @@
+<div class="page-container">
+  <app-page-header
+    eyebrow="Section 4 sur 5"
+    title="4. Context Engineering"
+    lead="Fournir aux agents IA les bonnes directives, le cadre architectural et la documentation pour un code prévisible et maintenable."
+  ></app-page-header>
+
+  <section class="prose-section">
+    <app-callout variant="quote">
+      <p class="quote-highlight">
+        « La qualité du résultat dépend de la qualité du contexte fourni à l’agent. »
+      </p>
+    </app-callout>
+
+    <p>Trois leviers permettent de guider les agents :</p>
+
+    <app-data-table
+      [columns]="leverColumns"
+      [rows]="leverRows"
+      caption="Les trois leviers du Context Engineering"
+    ></app-data-table>
+
+    <p>
+      Avant de commencer à développer, nous définissons les instructions que les agents IA doivent suivre pendant la génération de code, ainsi que l’architecture de l’application.
+    </p>
+
+    <h2>4.1 Initialiser le README</h2>
+    <p>Commencez par un README qui porte le contexte de l’application :</p>
+
+    <mat-accordion class="readme-accordion">
+      <mat-expansion-panel class="readme-panel">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="panel-title">
+            <mat-icon class="panel-icon">description</mat-icon>
+            <span>Afficher le prompt README complet (avec SPEC.md · 260 lignes)</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <app-code-block
+          [code]="readmePrompt"
+          language="markdown"
+          title="Prompt README"
+        ></app-code-block>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <h2>4.2 Créer l’architecture MVC</h2>
+    <p>Demandez à l'agent d'échafauder la structure de dossiers :</p>
+
+    <app-code-block
+      [code]="mvcPrompt"
+      language="prompt"
+      title="Prompt Architecture MVC"
+    ></app-code-block>
+
+    <app-data-table
+      [columns]="folderColumns"
+      [rows]="folderRows"
+      caption="Rôle de chaque répertoire de l’architecture MVC"
+    ></app-data-table>
+
+    <h2>4.3 Générer AGENTS.md</h2>
+    <p>
+      Ce prompt demande à l’agent d’analyser le dépôt, puis de créer à la racine le fichier d’instructions que tous les futurs agents suivront, sans modifier le code de l’application.
+    </p>
+
+    <mat-accordion class="agents-accordion">
+      <mat-expansion-panel class="agents-panel">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="panel-title">
+            <mat-icon class="panel-icon">smart_toy</mat-icon>
+            <span>Afficher le prompt complet pour AGENTS.md (en anglais)</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <app-code-block
+          [code]="agentsPrompt"
+          language="markdown"
+          title="Prompt de génération de AGENTS.md"
+        ></app-code-block>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <app-checkpoints [items]="checkpoints"></app-checkpoints>
+  </section>
+
+  <app-page-nav></app-page-nav>
+</div>

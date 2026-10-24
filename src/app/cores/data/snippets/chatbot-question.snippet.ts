@@ -1,0 +1,1 @@
+export const CHATBOT_QUESTION_SNIPPET = `Je veux mettre en place cette application, quelles sont les technologies modernes, adaptées, accessibles, efficientes et efficaces pour la mettre en marche ?`;

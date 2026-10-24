@@ -1,0 +1,78 @@
+<div class="page-container">
+  <app-page-header
+    eyebrow="Section 5 sur 5"
+    title="5. Décomposer le travail : la chaîne de prompts"
+    lead="Une application complexe ne se construit pas avec un seul prompt géant. Construisez PesaFlow avec une chaîne de prompts séquentielle, étape par étape."
+  ></app-page-header>
+
+  <section class="prose-section">
+    <p>
+      Chaque prompt s’appuie sur <code>AGENTS.md</code> et sur le résultat du précédent. Exécutez-les dans l’ordre et vérifiez le résultat (section « Completion » de chaque prompt) avant de passer au suivant.
+    </p>
+
+    <h2>Vue d'ensemble des 8 étapes</h2>
+
+    <div class="overview-table-wrapper">
+      <table class="overview-table">
+        <thead>
+          <tr>
+            <th class="col-num">#</th>
+            <th>Prompt</th>
+            <th>Objectif</th>
+            <th class="col-action">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (item of prompts; track item.id) {
+            <tr>
+              <td class="col-num font-mono"><strong>{{ item.number }}</strong></td>
+              <td><strong>{{ item.title }}</strong></td>
+              <td class="desc-cell">{{ item.description }}</td>
+              <td class="col-action">
+                <a (click)="scrollToPrompt(item.id)" class="anchor-link" role="button" tabindex="0">
+                  Voir <mat-icon class="link-icon">arrow_downward</mat-icon>
+                </a>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Détail des prompts à copier</h2>
+    <p>
+      Cliquez sur un panneau pour afficher le prompt complet en anglais et le copier directement pour votre agent IA :
+    </p>
+
+    <mat-accordion multi class="prompts-accordion">
+      @for (item of prompts; track item.id) {
+        <mat-expansion-panel
+          [id]="item.id"
+          [expanded]="activePanelId === item.id"
+          class="prompt-panel"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title class="prompt-panel-title">
+              <span class="prompt-badge">Étape {{ item.number }}</span>
+              <span>{{ item.title }}</span>
+            </mat-panel-title>
+            <mat-panel-description class="prompt-panel-desc">
+              {{ item.description }}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <div class="panel-inner">
+            <p class="panel-intro-text">{{ item.description }}</p>
+            <app-code-block
+              [code]="item.snippet"
+              language="markdown"
+              [title]="'Prompt ' + item.number + ' — ' + item.title"
+            ></app-code-block>
+          </div>
+        </mat-expansion-panel>
+      }
+    </mat-accordion>
+  </section>
+
+  <app-page-nav></app-page-nav>
+</div>
